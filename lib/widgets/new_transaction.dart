@@ -23,10 +23,14 @@ class _NewTransactionState extends State<NewTransaction> {
       enteredTitle,
       enteredAmount,
     );
+
+    Navigator.of(context).pop();
+    // closes the top most 'screen' which is the floating modal sheet in this app
   }
 
   @override
   Widget build(BuildContext context) {
+    final node = FocusScope.of(context);
     return Card(
       child: Container(
         padding: EdgeInsets.all(10),
@@ -36,7 +40,7 @@ class _NewTransactionState extends State<NewTransaction> {
             TextField(
               decoration: InputDecoration(labelText: 'Title'),
               controller: titleController,
-              onSubmitted: (_) => submitData(),
+              textInputAction: TextInputAction.next,
             ),
             TextField(
               decoration: InputDecoration(labelText: 'Amount'),
