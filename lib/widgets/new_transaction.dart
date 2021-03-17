@@ -54,7 +54,6 @@ class _NewTransactionState extends State<NewTransaction> {
 
   @override
   Widget build(BuildContext context) {
-    final node = FocusScope.of(context);
     return Card(
       child: SingleChildScrollView(
         child: Container(
@@ -71,7 +70,6 @@ class _NewTransactionState extends State<NewTransaction> {
                 decoration: InputDecoration(labelText: 'Amount'),
                 controller: _amountController,
                 keyboardType: TextInputType.number,
-                textInputAction: TextInputAction.next,
               ),
               Container(
                 height: 70,
